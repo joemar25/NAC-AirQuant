@@ -50,13 +50,13 @@ Author Note: You may use this Custom-Django Template I made, which is simplified
    Note: Component libary for tailwind css to help me write lesser codes in the html.
    here is the official website.
 
-## References:
+## References
 
 1. [Skeleton Tutorial](https://www.youtube.com/watch?v=tvGR675k5No)
 
    Note: This is good guide for the skeleton since currently this time the skeleton from htmx and daisyUI and tailwind is not usefull for me. So I use manual skeleton loader that I take from this video.
 
-## Settings:
+## Settings
 
 1. `(will be added)` Font Size - Allow users to increase or decrease the font size according to their comfort.
 2. `(will be added)` Contrast Settings - Provide options to adjust color contrast, especially between text and background.
@@ -85,3 +85,15 @@ Author Note: You may use this Custom-Django Template I made, which is simplified
 2. Home
 3. About
 4. Evaluate
+
+## Reference
+
+1. [QR](https://www.youtube.com/watch?v=19eo39lqpLM)
+
+TODO
+error handler events to pop up in a notification toast
+qr scanner backend
+qr scanner test
+dashboard
+graphs test
+informational data

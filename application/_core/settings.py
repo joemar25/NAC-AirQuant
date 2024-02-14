@@ -5,6 +5,7 @@
 
 import os
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
 from dotenv import load_dotenv as env_load
 
 # Load environment variables
@@ -12,7 +13,7 @@ env_load()
 
 # Mar - using the .env file
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.getenv("SECRET_KEY", "default_secret_key")
+SECRET_KEY = get_random_secret_key()
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 # separate the hosts with a space
@@ -78,6 +79,8 @@ DATABASES = {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "_core/database/db.sqlite3",
     }
+    # Mar: dj-database-url for Render PG, it is installed to convert the database url to the django config above
+    # "default": dj_database_url.parse(DB_URL)
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -109,6 +112,23 @@ STATIC_ROOT = BASE_DIR.parent / "static"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+# Mar
+if DEBUG == "False":
+    # Mar: HTTPS settings
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+    # Mar: HSTS settings
+    SECURE_HSTS_SECONDS = 31536000  # 1 Year
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+else:
+    SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+    SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds
+    SESSION_SAVE_EVERY_REQUEST = True
+    SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 
 # for tailwind css local [for use of the python manage.py collectstatic]
 # in production, we need a cdn files (contents delivery network)

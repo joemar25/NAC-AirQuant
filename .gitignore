@@ -58,7 +58,7 @@ cover/
 # Django stuff:
 *.log
 local_settings.py
-db.sqlite3
+# db.sqlite3 - MAR
 db.sqlite3-journal
 
 # Flask stuff:
@@ -160,8 +160,9 @@ cython_debug/
 #.idea/
 
 # mar
-*-cdn*
-*.txt
-*.Identifier
-/.vscode
+# *-cdn*
+# *.txt
+# *.Identifier
+# /.vscode
 /node_modules
+# **/migrations/**
