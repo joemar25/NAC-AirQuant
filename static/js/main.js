@@ -14,7 +14,7 @@ function initializePageWithLoader() {
 
 initializePageWithLoader();
 
-// QR CODE LOGIC
+// -------------------------------------- QR CODE LOGIC
 
 // QR_SCANNER is the ID used in the html
 const scanner = new Html5QrcodeScanner("QR_SCANNER", {
