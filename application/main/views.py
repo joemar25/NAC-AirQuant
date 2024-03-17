@@ -1,6 +1,6 @@
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
-from .helpers.function import try_me
+from .controllers.function import try_me
 
 
 def index(request):

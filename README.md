@@ -16,7 +16,7 @@ Author Note: You may use this Custom-Django Template I made, which is simplified
 ## Status
 
 1. Has admin (currently hidden by default)
-2. Integrated HTMX
+2. Integrated HTMX (x)
 3. Used component library for the frontend main css framework
 4. Has settings
 
@@ -54,7 +54,7 @@ Author Note: You may use this Custom-Django Template I made, which is simplified
 
 1. [Skeleton Tutorial](https://www.youtube.com/watch?v=tvGR675k5No)
 
-   Note: This is good guide for the skeleton since currently this time the skeleton from htmx and daisyUI and tailwind is not usefull for me. So I use manual skeleton loader that I take from this video.
+   Note: This is good guide for the skeleton since currently this time the skeleton from htmx and daisyUI and tailwind is not useful for me. So I use manual skeleton loader that I take from this video.
 
 ## Settings
 

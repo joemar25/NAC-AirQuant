@@ -40,6 +40,5 @@ function toggleFullscreen() {
 }
 
 export function updateFullscreen() {
-  // Logic to update fullscreen after htmx content updates
   initFullscreen();
 }

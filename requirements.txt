@@ -1,6 +1,5 @@
 asgiref
 Django
-django-htmx
 gunicorn
 python-dotenv
 pytz

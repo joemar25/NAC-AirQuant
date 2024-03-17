@@ -29,15 +29,13 @@ INSTALLED_APPS = [
     # Mar: For production, we use whitenoice, just above static
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
-    # Mar: Apps here - Internal
-    "django_htmx",
     # Mar: Apps here - Third Party
     "application.main",
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # Mar: For production, we use whitenoice, just above security
+    # Mar: For production, we use whitenoise, just above security
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -45,8 +43,6 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # Mar: Add Here, full documentation is here: https://github.com/bigskysoftware/htmx
-    "django_htmx.middleware.HtmxMiddleware",
 ]
 
 # mar - custom
@@ -125,7 +121,7 @@ if DEBUG == "False":
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 else:
-    SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+    SESSION_ENGINE = "django.contrib.sessions.backends.db"
     SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds
     SESSION_SAVE_EVERY_REQUEST = True
     SESSION_EXPIRE_AT_BROWSER_CLOSE = False

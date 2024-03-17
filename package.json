@@ -12,7 +12,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "html5-qrcode": "^2.3.8",
-    "theme-change": "^2.5.0"
+    "core-js": "^3.36.0",
+    "html5-qrcode": "^2.3.8"
   }
 }

@@ -17,5 +17,3 @@ document.addEventListener("load", removeSkeleton);
 // Fallback for onload
 window.onload = removeSkeleton;
 
-// Handle htmx navigation
-document.body.addEventListener("htmx:load", removeSkeleton);
