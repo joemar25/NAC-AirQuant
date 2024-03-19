@@ -3,8 +3,8 @@
  */
 
 import { Html5QrcodeScanner } from "html5-qrcode";
-import { removeSkeleton } from "./utility_controller/loader_controller.js";
-import { initFullscreen } from "./utility_controller/full_screen_controller.js";
+import { removeSkeleton } from "./controller/loader_controller.js";
+import { initFullscreen } from "./controller/full_screen_controller.js";
 
 function initializePageWithLoader() {
   document.body.classList.add("loading");
