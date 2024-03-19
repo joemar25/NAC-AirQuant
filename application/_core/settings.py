@@ -1,8 +1,3 @@
-"""
-    Mar: This is a customized settings.py file for the Template in our Django app.
-         You may change the settings here to suit your needs.
-"""
-
 import os
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
@@ -14,6 +9,7 @@ env_load()
 # Mar - using the .env file
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = get_random_secret_key()
+DB_URL = os.getenv("DATABASE_URL", "default_db_url")
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 # separate the hosts with a space
@@ -26,16 +22,14 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    # Mar: For production, we use whitenoice, just above static
     "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
-    # Mar: Apps here - Third Party
     "application.main",
 ]
 
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # Mar: For production, we use whitenoise, just above security
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -48,11 +42,11 @@ MIDDLEWARE = [
 # mar - custom
 ROOT_URLCONF = "application._core.urls"
 
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
-            # Add your template directories here
             os.path.join(BASE_DIR, "templates"),
         ],
         "APP_DIRS": True,
@@ -68,6 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "application._core.wsgi.application"
+
 
 # mar - custom
 DATABASES = {
@@ -109,7 +104,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# Mar
 if DEBUG == "False":
     # Mar: HTTPS settings
     SECURE_SSL_REDIRECT = True
@@ -121,7 +115,7 @@ if DEBUG == "False":
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
 else:
-    SESSION_ENGINE = "django.contrib.sessions.backends.db"
+    SESSION_ENGINE = 'django.contrib.sessions.backends.db'
     SESSION_COOKIE_AGE = 1209600  # 2 weeks in seconds
     SESSION_SAVE_EVERY_REQUEST = True
     SESSION_EXPIRE_AT_BROWSER_CLOSE = False
@@ -130,8 +124,8 @@ else:
 # in production, we need a cdn files (contents delivery network)
 # STATIC_ROOT = BASE_DIR.parent / "production-cdn" / "static"
 
-# Mar: for whitenoise storage
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# Mar: for whitenoise storage, solved the js problem
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
