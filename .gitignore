@@ -160,9 +160,9 @@ cython_debug/
 #.idea/
 
 # mar
-# *-cdn*
-# *.txt
-# *.Identifier
-# /.vscode
+*-cdn*
+*.txt
+*.Identifier
+/.vscode
 /node_modules
-# **/migrations/**
+**/migrations/**

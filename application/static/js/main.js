@@ -28,6 +28,7 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
           height: 250,
         },
         fps: 20,
+        disableFlip: true,
         // Pass the stream to the scanner
         cameraId: { exact: stream.getVideoTracks()[0].label },
       });
