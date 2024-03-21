@@ -8,6 +8,14 @@ def index(request):
     return render(request, "main/index.html", context)
 
 
+def about(request):
+    return render(request, "about/index.html")
+
+
+def contact(request):
+    return render(request, "contact/index.html")
+
+
 def dashboard(request):
     context = {"data": "hello this is main page", "function_data": try_me()}
     pk = 1
