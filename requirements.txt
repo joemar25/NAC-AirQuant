@@ -1,9 +1,0 @@
-asgiref
-Django
-gunicorn
-python-dotenv
-pytz
-sqlparse
-typing_extensions
-tzdata
-whitenoise
