@@ -23,7 +23,7 @@
     "@splinetool/runtime": "^1.0.42",
     "@supabase/ssr": "^0.1.0",
     "@supabase/supabase-js": "^2.39.3",
-    "axios": "^1.6.7",
+    "axios": "^1.7.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "eslint-config-next": "^14.2.3",
